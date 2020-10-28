@@ -37,25 +37,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  quantity(item: Shoe, action: string, event? ){
-    if(action === 'sum'){
-      if(item.quantity < item.stock){
-        item.quantity++;
-      }
-    }
-    if(action === 'res'){
-      if(item.quantity > 0){
-        item.quantity--;
-      }
-    }
-    if(action === 'inp'){
-      event.preventDefault();
-      const val = event.target.value; 
-      console.log(val)
-      if((val < item.stock)&&(val > 0)){
-        item.quantity = val;
-      }
-    }
-  }
+  
 
 }

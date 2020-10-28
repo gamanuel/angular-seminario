@@ -1,36 +1,6 @@
 <div class="row mt-4">
     <div class="col-md-2 py-5" *ngFor="let shoe of shoes; let i = index">
-        <div class="card h-100">
-            <img src="https://essential.vteximg.com.br/arquivos/ids/301157-1000-1000/306-5769_1.jpg?v=637094145530900000"  class="card-img-top" alt="...">
-            
-            <div class="card-body border-top">
-                <small class="text-muted">#000{{shoe.id}}</small>
-                <h6 class="card-title">{{shoe.description}}</h6>
-                <h5 class="card-text"> <strong>{{shoe.price |currency }}</strong></h5>
-                <span class="badge badge-pill badge-danger" *ngIf="shoe.stock == 0">Producto sin stock</span>
-            </div>
-            <div class="card-footer text-muted bg-white">
-                <div class="row">
-                    <div class="col-12 mt-1">
-                        <button  class="btn btn-sm btn-block btn-dark " *ngIf="shoe.stock == 0" disabled>-</button>
-                        <button  class="btn btn-sm btn-block btn-dark " *ngIf="shoe.stock > 0" (click)="quantity(shoe,'res')" >-</button>
-
-                    </div>
-                    <div class="col-12 mt-1 ">
-                        <input type="number" class="form-control form-control-sm text-center" *ngIf="shoe.stock == 0" [(ngModel)]="shoe.quantity" disabled value="" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <input type="number" class="form-control form-control-sm text-center" *ngIf="shoe.stock > 0" (keyup)="quantity(shoe,'inp',$event)" [(ngModel)]="shoe.quantity"  aria-describedby="emailHelp">
-                    </div>
-                    <div class="col-12 mt-1">
-                        <button  class="btn btn-sm btn-block btn-dark " *ngIf="shoe.stock == 0" disabled>+</button>
-                        <button  class="btn btn-sm btn-block btn-dark " *ngIf="shoe.stock > 0" (click)="quantity(shoe,'sum')" >+</button>
-                    </div>
-                    <div class="col-md-12 mt-3">
-                        <button  class="btn btn-sm btn-block btn-dark "  *ngIf="shoe.stock == 0" disabled>Agregar al carrito</button>
-                        <button  class="btn btn-sm btn-block btn-success " *ngIf="shoe.stock > 0" >Agregar al carrito</button>
-                    </div>
-                </div>
-              </div>
-        </div>
+        <app-product [shoe]="shoe"></app-product>
     </div>
   
 </div>

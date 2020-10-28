@@ -1,8 +1,20 @@
-<div class="card">
-    <img src="https://essential.vteximg.com.br/arquivos/ids/301157-1000-1000/306-5769_1.jpg?v=637094145530900000"  class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Air force</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Agregar al carrito</a>
+<div class="card h-100">
+  <img src="https://essential.vteximg.com.br/arquivos/ids/301157-1000-1000/306-5769_1.jpg?v=637094145530900000"  class="card-img-top" alt="...">
+  
+  <div class="card-body border-top">
+      <small class="text-muted">#000{{shoe.id}}</small>
+      <h6 class="card-title">{{shoe.description}}</h6>
+      <h5 class="card-text"> <strong>{{shoe.price |currency }}</strong></h5>
+      <span class="badge badge-pill badge-danger" *ngIf="shoe.stock == 0">Producto sin stock</span>
+      <span class="badge badge-pill badge-warning" *ngIf="showAlert">Limite de stock {{shoe.stock}}</span>
+  </div>
+  <div class="card-footer text-muted bg-white">
+      <app-input-quantity [(quantity)]="shoe.quantity" [max]="shoe.stock" (maxReached)="showAlert = $event"></app-input-quantity>
+      <div class="row">
+          <div class="col-md-12 mt-3">
+              <button  class="btn btn-sm btn-block btn-dark "  *ngIf="shoe.stock == 0" disabled>Agregar al carrito</button>
+              <button  class="btn btn-sm btn-block btn-success " *ngIf="shoe.stock > 0" >Agregar al carrito</button>
+          </div>
+      </div>
     </div>
 </div>

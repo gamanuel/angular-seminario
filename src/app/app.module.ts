@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
+import { InputQuantityComponent } from './components/input-quantity/input-quantity.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     NavbarComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    InputQuantityComponent,
   ],
   imports: [
     BrowserModule,
