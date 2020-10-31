@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
       id: "3",
       description: "Air force 3",
       price: 225,
-      stock: 0,
+      stock: 3,
       quantity: 0
     }
   ];

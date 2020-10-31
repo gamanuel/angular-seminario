@@ -10,6 +10,7 @@ import { ShoeCartService } from "../../services/shoe-cart.service";
 })
 export class CartComponent implements OnInit {
   cartList$: Observable<Shoe[]>;
+  total = 0;
 
   constructor(private shoeCartService: ShoeCartService) {
     this.cartList$ = shoeCartService.cartList.asObservable();
