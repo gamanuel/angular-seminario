@@ -12,7 +12,7 @@
 									<th scope="col">Descripcion</th>
 									<th scope="col">Cantidad</th>
 									<th scope="col">Precio</th>
-									<!-- 	<th scope="col"><i class="far fa-trash-alt"></i></th> -->
+									<th scope="col">Subtotal</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -21,8 +21,8 @@
 									<td>{{item.description}}</td>
 									<td>{{item.quantity}}</td>
 									<td>{{item.price | currency}}</td>
-									<!-- <td><button class="btn btn-sm btn-outline-danger"><i class="far fa-trash-alt"></i></button>
-									</td> -->
+									<td>{{item.price * item.quantity | currency}}
+									</td>
 
 								</tr>
 							</tbody>
